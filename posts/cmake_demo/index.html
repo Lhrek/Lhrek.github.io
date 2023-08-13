@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Cmake_demo - GZJ&#39;s blog</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Cmake_demo" />
+<meta property="og:description" content="[toc] 教程仓库：ttroy50/cmake-examples: Useful CMake Examples (github.com) 01-basic A-hello-cmake A-hello-cmake$ tree . ├── CMakeLists.txt ├── main.cpp # $ cmake --version cmake_minimum_required(VERSION 3.5) # Set the project name project (hello_cmake) # Add an executable ，生成名为”h" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/cmake_demo/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-12T21:39:22+08:00" />
+<meta property="article:modified_time" content="2023-08-12T21:39:22+08:00" /><meta property="og:site_name" content="My cool site" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cmake_demo"/>
+<meta name="twitter:description" content="[toc] 教程仓库：ttroy50/cmake-examples: Useful CMake Examples (github.com) 01-basic A-hello-cmake A-hello-cmake$ tree . ├── CMakeLists.txt ├── main.cpp # $ cmake --version cmake_minimum_required(VERSION 3.5) # Set the project name project (hello_cmake) # Add an executable ，生成名为”h"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/cmake_demo/" /><link rel="next" href="http://example.org/posts/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%E4%B9%A6%E6%91%98/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Cmake_demo",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/cmake_demo\/"
+        },"genre": "posts","wordcount":  1790 ,
+        "url": "http:\/\/example.org\/posts\/cmake_demo\/","datePublished": "2023-08-12T21:39:22+08:00","dateModified": "2023-08-12T21:39:22+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "GZJ"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="GZJ&#39;s blog">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="GZJ&#39;s blog">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Cmake_demo</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>GZJ</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-08-12">2023-08-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1790 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#a-hello-cmake">A-hello-cmake</a></li>
+    <li><a href="#b-hello-headers">B-hello-headers</a></li>
+    <li><a href="#c-static-library">C-static-library</a></li>
+    <li><a href="#d-shared-library">D-shared-library</a></li>
+    <li><a href="#e-installing">E-installing</a></li>
+    <li><a href="#f-build-type">F-Build-Type</a></li>
+    <li><a href="#g-complile-flags">G-complile-flags</a></li>
+    <li><a href="#h-third-party-library">H-third-party-library</a></li>
+    <li><a href="#i-compiling-with-clang">I-compiling-with-clang</a></li>
+    <li><a href="#j-building-with-ninja">J-building-with-ninja</a></li>
+    <li><a href="#k-imported-targets">K-imported-targets</a></li>
+    <li><a href="#l-cpp-standard">L-cpp-standard</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>[toc]</p>
+<p>教程仓库：<a href="https://github.com/ttroy50/cmake-examples" target="_blank" rel="noopener noreffer ">ttroy50/cmake-examples: Useful CMake Examples (github.com)</a></p>
+<h1 id="01-basic">01-basic</h1>
+<h2 id="a-hello-cmake">A-hello-cmake</h2>
+<pre tabindex="0"><code>A-hello-cmake$ tree
+.
+├── CMakeLists.txt
+├── main.cpp
+</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="c"># $ cmake --version
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.5</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Set the project name
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">project</span> <span class="p">(</span><span class="s">hello_cmake</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Add an executable ，生成名为”hello_cmake“的可执行程序
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">hello_cmake</span> <span class="s">main.cpp</span><span class="p">)</span>  <span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># add_executable(${PROJECT_NAME} main.cpp) 可保持项目名和可执行文件名相同
+</span></span></span></code></pre></div><h2 id="b-hello-headers">B-hello-headers</h2>
+<pre tabindex="0"><code class="language-B-hello-headers$" data-lang="B-hello-headers$">.
+├── CMakeLists.txt
+├── include
+│   └── Hello.h
+└── src
+    ├── Hello.cpp
+    └── main.cpp
+</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-CMAKE" data-lang="CMAKE"><span class="line"><span class="cl"><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.5</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">project</span> <span class="p">(</span><span class="s">hello_headers</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Create a sources variable with a link to all cpp files to compile
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">set</span><span class="p">(</span><span class="s">SOURCES</span>
+</span></span><span class="line"><span class="cl">    <span class="s">src/Hello.cpp</span>
+</span></span><span class="line"><span class="cl">    <span class="s">src/main.cpp</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Add an executable with the above sources
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">hello_headers</span> <span class="o">${</span><span class="nv">SOURCES</span><span class="o">}</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Set the directories that should be included in the build command for this target
+</span></span></span><span class="line"><span class="cl"><span class="c"># when running g++ these will be included as -I/directory/path/
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">target_include_directories</span><span class="p">(</span><span class="s">hello_headers</span> 
+</span></span><span class="line"><span class="cl">    <span class="s">PRIVATE</span> 
+</span></span><span class="line"><span class="cl">        <span class="o">${</span><span class="nv">PROJECT_SOURCE_DIR</span><span class="o">}</span><span class="s">/include</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span></code></pre></div><p>​	运行 make 命令时，输出仅显示构建的状态。要查看用于调试目的的完整输出，您可以在运行 make 时添加 VERBOSE=1 标志</p>
+<h2 id="c-static-library">C-static-library</h2>
+<pre tabindex="0"><code class="language-$" data-lang="$">.
+├── CMakeLists.txt
+├── include
+│   └── static
+│       └── Hello.h
+└── src
+    ├── Hello.cpp
+    └── main.cpp
+</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="nb">add_library</span><span class="p">(</span><span class="s">hello_library</span> <span class="s">STATIC</span> <span class="c">#创建静态库
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="s">src/Hello.cpp</span> 
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.5</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">project</span><span class="p">(</span><span class="s">hello_library</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">############################################################
+</span></span></span><span class="line"><span class="cl"><span class="c"># Create a library
+</span></span></span><span class="line"><span class="cl"><span class="c">############################################################
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">#Generate the static library from the library sources
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">add_library</span><span class="p">(</span><span class="s">hello_library</span> <span class="s">STATIC</span> 
+</span></span><span class="line"><span class="cl">    <span class="s">src/Hello.cpp</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">target_include_directories</span><span class="p">(</span><span class="s">hello_library</span>
+</span></span><span class="line"><span class="cl">    <span class="s">PUBLIC</span> 
+</span></span><span class="line"><span class="cl">        <span class="o">${</span><span class="nv">PROJECT_SOURCE_DIR</span><span class="o">}</span><span class="s">/include</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">############################################################
+</span></span></span><span class="line"><span class="cl"><span class="c"># Create an executable
+</span></span></span><span class="line"><span class="cl"><span class="c">############################################################
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Add an executable with the above sources
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">hello_binary</span> 
+</span></span><span class="line"><span class="cl">    <span class="s">src/main.cpp</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># link the new hello_library target with the hello_binary target
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">target_link_libraries</span><span class="p">(</span> <span class="s">hello_binary</span>
+</span></span><span class="line"><span class="cl">    <span class="s">PRIVATE</span> 
+</span></span><span class="line"><span class="cl">        <span class="s">hello_library</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span></code></pre></div><h2 id="d-shared-library">D-shared-library</h2>
+<pre tabindex="0"><code>$ tree
+.
+├── CMakeLists.txt
+├── include
+│   └── shared
+│       └── Hello.h
+└── src
+    ├── Hello.cpp
+    └── main.cpp
+</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.5</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">project</span><span class="p">(</span><span class="s">hello_library</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">############################################################
+</span></span></span><span class="line"><span class="cl"><span class="c"># Create a library
+</span></span></span><span class="line"><span class="cl"><span class="c">############################################################
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">#Generate the shared library from the library sources
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">add_library</span><span class="p">(</span><span class="s">hello_library</span> <span class="s">SHARED</span> 
+</span></span><span class="line"><span class="cl">    <span class="s">src/Hello.cpp</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">add_library</span><span class="p">(</span><span class="s">hello::library</span> <span class="s">ALIAS</span> <span class="s">hello_library</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">target_include_directories</span><span class="p">(</span><span class="s">hello_library</span>
+</span></span><span class="line"><span class="cl">    <span class="s">PUBLIC</span> 
+</span></span><span class="line"><span class="cl">        <span class="o">${</span><span class="nv">PROJECT_SOURCE_DIR</span><span class="o">}</span><span class="s">/include</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">############################################################
+</span></span></span><span class="line"><span class="cl"><span class="c"># Create an executable
+</span></span></span><span class="line"><span class="cl"><span class="c">############################################################
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Add an executable with the above sources
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">hello_binary</span>
+</span></span><span class="line"><span class="cl">    <span class="s">src/main.cpp</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># link the new hello_library target with the hello_binary target
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">target_link_libraries</span><span class="p">(</span> <span class="s">hello_binary</span>
+</span></span><span class="line"><span class="cl">    <span class="s">PRIVATE</span> 
+</span></span><span class="line"><span class="cl">        <span class="s">hello::library</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span></code></pre></div><h2 id="e-installing">E-installing</h2>
+<p>​	将生成的库复制到指定位置</p>
+<pre tabindex="0"><code class="language-$" data-lang="$">.
+├── cmake-examples.conf
+├── CMakeLists.txt
+├── include
+│   └── installing
+│       └── Hello.h
+├── README.adoc
+└── src
+    ├── Hello.cpp
+    └── main.cpp
+</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.5</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">project</span><span class="p">(</span><span class="s">cmake_examples_install</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">############################################################
+</span></span></span><span class="line"><span class="cl"><span class="c"># Create a library
+</span></span></span><span class="line"><span class="cl"><span class="c">############################################################
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">#Generate the shared library from the library sources
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">add_library</span><span class="p">(</span><span class="s">cmake_examples_inst</span> <span class="s">SHARED</span>
+</span></span><span class="line"><span class="cl">    <span class="s">src/Hello.cpp</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">target_include_directories</span><span class="p">(</span><span class="s">cmake_examples_inst</span>
+</span></span><span class="line"><span class="cl">    <span class="s">PUBLIC</span> 
+</span></span><span class="line"><span class="cl">        <span class="o">${</span><span class="nv">PROJECT_SOURCE_DIR</span><span class="o">}</span><span class="s">/include</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">############################################################
+</span></span></span><span class="line"><span class="cl"><span class="c"># Create an executable
+</span></span></span><span class="line"><span class="cl"><span class="c">############################################################
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Add an executable with the above sources
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">cmake_examples_inst_bin</span>
+</span></span><span class="line"><span class="cl">    <span class="s">src/main.cpp</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># link the new hello_library target with the hello_binary target
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">target_link_libraries</span><span class="p">(</span> <span class="s">cmake_examples_inst_bin</span>
+</span></span><span class="line"><span class="cl">    <span class="s">PRIVATE</span> 
+</span></span><span class="line"><span class="cl">        <span class="s">cmake_examples_inst</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">############################################################
+</span></span></span><span class="line"><span class="cl"><span class="c"># Install
+</span></span></span><span class="line"><span class="cl"><span class="c">############################################################
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Binaries
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">install</span> <span class="p">(</span><span class="s">TARGETS</span> <span class="s">cmake_examples_inst_bin</span>
+</span></span><span class="line"><span class="cl">    <span class="s">DESTINATION</span> <span class="s">bin</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Library
+</span></span></span><span class="line"><span class="cl"><span class="c"># Note: may not work on windows
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">install</span> <span class="p">(</span><span class="s">TARGETS</span> <span class="s">cmake_examples_inst</span>
+</span></span><span class="line"><span class="cl">    <span class="s">LIBRARY</span> <span class="s">DESTINATION</span> <span class="s">lib</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Header files
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">install</span><span class="p">(</span><span class="s">DIRECTORY</span> <span class="o">${</span><span class="nv">PROJECT_SOURCE_DIR</span><span class="o">}</span><span class="s">/include/</span> 
+</span></span><span class="line"><span class="cl">    <span class="s">DESTINATION</span> <span class="s">include</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Config
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">install</span> <span class="p">(</span><span class="s">FILES</span> <span class="s">cmake-examples.conf</span>
+</span></span><span class="line"><span class="cl">    <span class="s">DESTINATION</span> <span class="s">etc</span><span class="p">)</span><span class="err">
+</span></span></span></code></pre></div><h2 id="f-build-type">F-Build-Type</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="err">CMAKE_BUILD_TYPE
+</span></span></span></code></pre></div><ol>
+<li><strong>Release</strong>:
+<ul>
+<li>为产出的目标进行优化。</li>
+<li>不包含调试信息。</li>
+<li>通常用于生产或最终发布的版本。</li>
+<li>对应的编译器标志（以 GCC 和 Clang 为例）通常包括 <code>-O3</code>。</li>
+</ul>
+</li>
+<li><strong>Debug</strong>:
+<ul>
+<li>不进行优化。</li>
+<li>包含调试信息。</li>
+<li>通常用于开发阶段，以便开发者能够使用调试器调试代码。</li>
+<li>对应的编译器标志（以 GCC 和 Clang 为例）通常包括 <code>-g</code>。</li>
+</ul>
+</li>
+<li><strong>RelWithDebInfo</strong> (Release with Debug Info):
+<ul>
+<li>进行优化。</li>
+<li>包含调试信息。</li>
+<li>在需要优化的同时保留调试信息的情况下使用，例如性能分析。</li>
+<li>对应的编译器标志（以 GCC 和 Clang 为例）通常包括 <code>-O2 -g</code>。</li>
+</ul>
+</li>
+<li><strong>MinSizeRel</strong> (Minimum Size Release):
+<ul>
+<li>优化为最小的产出大小。</li>
+<li>不包含调试信息。</li>
+<li>在需要优化构建目标大小的应用中使用。</li>
+<li>对应的编译器标志（以 GCC 和 Clang 为例）通常包括 <code>-Os</code>。</li>
+</ul>
+</li>
+</ol>
+<h2 id="g-complile-flags">G-complile-flags</h2>
+<pre tabindex="0"><code class="language-$" data-lang="$">.
+├── CMakeLists.txt
+├── main.cpp
+</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.5</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Set a default C++ compile flag
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">set</span> <span class="p">(</span><span class="s">CMAKE_CXX_FLAGS</span> <span class="s2">&#34;${CMAKE_CXX_FLAGS} -DEX2&#34;</span> <span class="s">CACHE</span> <span class="s">STRING</span> <span class="s2">&#34;Set C++ Compiler Flags&#34;</span> <span class="s">FORCE</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Set the project name
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">project</span> <span class="p">(</span><span class="s">compile_flags</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Add an executable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">cmake_examples_compile_flags</span> <span class="s">main.cpp</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">target_compile_definitions</span><span class="p">(</span><span class="s">cmake_examples_compile_flags</span> 
+</span></span><span class="line"><span class="cl">    <span class="s">PRIVATE</span> <span class="s">EX3</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span></code></pre></div><ul>
+<li><strong><code>CMAKE_CXX_FLAGS</code></strong>:
+<ul>
+<li>这是一个 CMake 变量，用于存储 C++ 编译器的标志。</li>
+</ul>
+</li>
+<li><strong><code>&quot;${CMAKE_CXX_FLAGS} -DEX2&quot;</code></strong>:
+<ul>
+<li>这部分代码将 <code>-DEX2</code> 添加到现有的 <code>CMAKE_CXX_FLAGS</code> 变量的内容中。这实际上是为编译器添加了一个定义，名为 <code>EX2</code>。</li>
+</ul>
+</li>
+<li><strong><code>CACHE STRING</code></strong>:
+<ul>
+<li>这指示 CMake 将 <code>CMAKE_CXX_FLAGS</code> 变量存储在其缓存中，这样其他 CMake 运行也可以看到和使用它。<code>STRING</code> 指定了该缓存条目的类型，即字符串。</li>
+</ul>
+</li>
+<li><strong><code>&quot;Set C++ Compiler Flags&quot;</code></strong>:
+<ul>
+<li>这是为缓存条目提供的描述，这样当你使用 CMake GUI 或其他前端查看缓存时，可以看到有关此条目的简短描述。</li>
+</ul>
+</li>
+<li><strong><code>FORCE</code></strong>:
+<ul>
+<li>这个选项会强制设置变量的值，即使它已经在缓存中有值了。简而言之，如果 <code>CMAKE_CXX_FLAGS</code> 已经在缓存中有一个值，使用 <code>FORCE</code> 会覆盖这个值。</li>
+</ul>
+</li>
+</ul>
+<p>总的来说，第二行命令的目的是为 C++ 编译器添加一个定义 <code>-DEX2</code>，并确保这个定义在 CMake 的后续运行中也可用（因为它存储在缓存中）。</p>
+<p><strong><code>target_compile_definitions(cmake_examples_compile_flags PRIVATE EX3)</code></strong>:</p>
+<ul>
+<li>这给特定的目标（在本例中为 <code>cmake_examples_compile_flags</code>）添加了一个编译时定义 <code>EX3</code>。定义只在这个目标的编译中可用，而不影响其他目标。使用 <code>PRIVATE</code> 说明这个定义只应用于这个目标，而不传递给其他链接到它的目标。</li>
+</ul>
+<h2 id="h-third-party-library">H-third-party-library</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.5</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Set the project name
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">project</span> <span class="p">(</span><span class="s">third_party_include</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># find a boost install with the libraries filesystem and system
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">find_package</span><span class="p">(</span><span class="s">Boost</span> <span class="s">1.46.1</span> <span class="s">REQUIRED</span> <span class="s">COMPONENTS</span> <span class="s">filesystem</span> <span class="s">system</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># check if boost was found
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">if</span><span class="p">(</span><span class="s">Boost_FOUND</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="nb">message</span> <span class="p">(</span><span class="s2">&#34;boost found&#34;</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">else</span><span class="p">()</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="nb">message</span> <span class="p">(</span><span class="s">FATAL_ERROR</span> <span class="s2">&#34;Cannot find Boost&#34;</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">endif</span><span class="p">()</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Add an executable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">third_party_include</span> <span class="s">main.cpp</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># link against the boost libraries
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">target_link_libraries</span><span class="p">(</span> <span class="s">third_party_include</span>
+</span></span><span class="line"><span class="cl">    <span class="s">PRIVATE</span>
+</span></span><span class="line"><span class="cl">        <span class="s">Boost::filesystem</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span></code></pre></div><p>几乎所有重要的项目都需要包含第三方库、标头或程序。 CMake 支持使用 <code>find_package()</code> 函数查找这些工具的路径。这将从 <code>CMAKE_MODULE_PATH</code> 中的文件夹列表中搜索“FindXXX.cmake”格式的 CMake 模块。在 Linux 上，默认搜索路径将包含 <code>/usr/share/cmake/Modules</code> 。</p>
+<p>大多数包含的软件包都会设置一个变量 <code>XXX_FOUND</code> ，该变量可用于检查该软件包在系统上是否可用。</p>
+<h2 id="i-compiling-with-clang">I-compiling-with-clang</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1"># Ubuntu supports multiple versions of clang to be installed at the same time.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># The tests need to determine the clang binary before calling cmake</span>
+</span></span><span class="line"><span class="cl"><span class="nv">clang_bin</span><span class="o">=</span><span class="sb">`</span>which clang<span class="sb">`</span>
+</span></span><span class="line"><span class="cl"><span class="nv">clang_xx_bin</span><span class="o">=</span><span class="sb">`</span>which clang++<span class="sb">`</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -z <span class="nv">$clang_bin</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">clang_ver</span><span class="o">=</span><span class="sb">`</span>dpkg --get-selections <span class="p">|</span> grep clang <span class="p">|</span> grep -v -m1 libclang <span class="p">|</span> cut -f1 <span class="p">|</span> cut -d <span class="s1">&#39;-&#39;</span> -f2<span class="sb">`</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">clang_bin</span><span class="o">=</span><span class="s2">&#34;clang-</span><span class="nv">$clang_ver</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">clang_xx_bin</span><span class="o">=</span><span class="s2">&#34;clang++-</span><span class="nv">$clang_ver</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Will use clang [</span><span class="nv">$clang_bin</span><span class="s2">] and clang++ [</span><span class="nv">$clang_xx_bin</span><span class="s2">]&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mkdir -p build.clang <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build.clang <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    cmake .. -DCMAKE_C_COMPILER<span class="o">=</span><span class="nv">$clang_bin</span> -DCMAKE_CXX_COMPILER<span class="o">=</span><span class="nv">$clang_xx_bin</span> <span class="o">&amp;&amp;</span> make
+</span></span></code></pre></div><h2 id="j-building-with-ninja">J-building-with-ninja</h2>
+<p>make ~ ninja</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir build.ninja
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span>  build.ninja
+</span></span><span class="line"><span class="cl">cmake .. -G Ninja
+</span></span><span class="line"><span class="cl">ninja -v
+</span></span></code></pre></div><h2 id="k-imported-targets">K-imported-targets</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">  target_link_libraries<span class="o">(</span> imported_targets
+</span></span><span class="line"><span class="cl">      PRIVATE
+</span></span><span class="line"><span class="cl">          Boost::filesystem
+</span></span><span class="line"><span class="cl">  <span class="o">)</span>
+</span></span></code></pre></div><h2 id="l-cpp-standard">L-cpp-standard</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="c"># Set the minimum version of CMake that can be used
+</span></span></span><span class="line"><span class="cl"><span class="c"># To find the cmake version run
+</span></span></span><span class="line"><span class="cl"><span class="c"># $ cmake --version
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">2.8</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Set the project name
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">project</span> <span class="p">(</span><span class="s">hello_cpp11</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># try conditional compilation
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">include</span><span class="p">(</span><span class="s">CheckCXXCompilerFlag</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">CHECK_CXX_COMPILER_FLAG</span><span class="p">(</span><span class="s2">&#34;-std=c++11&#34;</span> <span class="s">COMPILER_SUPPORTS_CXX11</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">CHECK_CXX_COMPILER_FLAG</span><span class="p">(</span><span class="s2">&#34;-std=c++0x&#34;</span> <span class="s">COMPILER_SUPPORTS_CXX0X</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># check results and add flag
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">if</span><span class="p">(</span><span class="s">COMPILER_SUPPORTS_CXX11</span><span class="p">)</span><span class="c">#
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_CXX_FLAGS</span> <span class="s2">&#34;${CMAKE_CXX_FLAGS} -std=c++11&#34;</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">elseif</span><span class="p">(</span><span class="s">COMPILER_SUPPORTS_CXX0X</span><span class="p">)</span><span class="c">#
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_CXX_FLAGS</span> <span class="s2">&#34;${CMAKE_CXX_FLAGS} -std=c++0x&#34;</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">else</span><span class="p">()</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    <span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span> <span class="s2">&#34;The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.&#34;</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">endif</span><span class="p">()</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Add an executable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">hello_cpp11</span> <span class="s">main.cpp</span><span class="p">)</span><span class="err">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="c"># Set the minimum version of CMake that can be used
+</span></span></span><span class="line"><span class="cl"><span class="c"># To find the cmake version run
+</span></span></span><span class="line"><span class="cl"><span class="c"># $ cmake --version
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.1</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Set the project name
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">project</span> <span class="p">(</span><span class="s">hello_cpp11</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># set the C++ standard to C++ 11
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_CXX_STANDARD</span> <span class="s">11</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Add an executable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">hello_cpp11</span> <span class="s">main.cpp</span><span class="p">)</span><span class="err">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="c"># Set the minimum version of CMake that can be used
+</span></span></span><span class="line"><span class="cl"><span class="c"># To find the cmake version run
+</span></span></span><span class="line"><span class="cl"><span class="c"># $ cmake --version
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.1</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Set the project name
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">project</span> <span class="p">(</span><span class="s">hello_cpp11</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Add an executable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">hello_cpp11</span> <span class="s">main.cpp</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># set the C++ standard to the appropriate standard for using auto
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">target_compile_features</span><span class="p">(</span><span class="s">hello_cpp11</span> <span class="s">PUBLIC</span> <span class="s">cxx_auto_type</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># Print the list of known compile features for this version of CMake
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">message</span><span class="p">(</span><span class="s2">&#34;List of compile features: ${CMAKE_CXX_COMPILE_FEATURES}&#34;</span><span class="p">)</span><span class="err">
+</span></span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-08-12</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/posts/cmake_demo/" data-title="Cmake_demo"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://example.org/posts/cmake_demo/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://example.org/posts/cmake_demo/" data-title="Cmake_demo"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://example.org/posts/cmake_demo/" data-title="Cmake_demo"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://example.org/posts/cmake_demo/" data-title="Cmake_demo"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/posts/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%E4%B9%A6%E6%91%98/" class="next" rel="next" title="程序员的自我修养书摘">程序员的自我修养书摘<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">GZJ</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

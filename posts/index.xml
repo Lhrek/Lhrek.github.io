@@ -3,21 +3,22 @@
         <title>All Posts - GZJ&#39;s blog</title>
         <link>http://example.org/posts/</link>
         <description>All Posts | GZJ&#39;s blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 25 Jun 2023 17:50:47 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Second</title>
-    <link>http://example.org/posts/second/</link>
-    <pubDate>Sun, 25 Jun 2023 17:50:47 &#43;0800</pubDate>
-    <author>xxxx</author>
-    <guid>http://example.org/posts/second/</guid>
-    <description><![CDATA[hrek gzj]]></description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>hrek@qq.com (GZJ)</managingEditor>
+            <webMaster>hrek@qq.com (GZJ)</webMaster><lastBuildDate>Sat, 12 Aug 2023 21:41:33 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>程序员的自我修养书摘</title>
+    <link>http://example.org/posts/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%E4%B9%A6%E6%91%98/</link>
+    <pubDate>Sat, 12 Aug 2023 21:41:33 &#43;0800</pubDate>
+    <author>GZJ</author>
+    <guid>http://example.org/posts/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%E4%B9%A6%E6%91%98/</guid>
+    <description><![CDATA[[toc] 这是一本和你有关的书。 毫无疑问，你的事业是你自己的，更重要的是，你的人生是你的——都是你自己所拥有的。之所以有必要读这本书，是因为我们相信]]></description>
 </item>
 <item>
-    <title>First_post</title>
-    <link>http://example.org/posts/first_t/</link>
-    <pubDate>Sun, 25 Jun 2023 17:29:56 &#43;0800</pubDate>
-    <author>xxxx</author>
-    <guid>http://example.org/posts/first_t/</guid>
-    <description><![CDATA[hugo建站 windows环境下载二进制文件，配置环境变量或者将hugo.exe移动到path路径下 最新的hugo和loveit主题不兼容 使]]></description>
+    <title>Cmake_demo</title>
+    <link>http://example.org/posts/cmake_demo/</link>
+    <pubDate>Sat, 12 Aug 2023 21:39:22 &#43;0800</pubDate>
+    <author>GZJ</author>
+    <guid>http://example.org/posts/cmake_demo/</guid>
+    <description><![CDATA[[toc] 教程仓库：ttroy50/cmake-examples: Useful CMake Examples (github.com) 01-basic A-hello-cmake A-hello-cmake$ tree . ├── CMakeLists.txt ├── main.cpp # $ cmake --version cmake_minimum_required(VERSION 3.5) # Set the project name project (hello_cmake) # Add an executable ，生成名为”h]]></description>
 </item>
 </channel>
 </rss>
