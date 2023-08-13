@@ -3,23 +3,8 @@
         <title>GZJ&#39;s blog</title>
         <link>http://example.org/</link>
         <description>This is my cool site</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 25 Jun 2023 17:50:47 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>hrek@qq.com (GZJ)</managingEditor>
+            <webMaster>hrek@qq.com (GZJ)</webMaster>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
-        <item>
-    <title>Second</title>
-    <link>http://example.org/posts/second/</link>
-    <pubDate>Sun, 25 Jun 2023 17:50:47 &#43;0800</pubDate>
-    <author>xxxx</author>
-    <guid>http://example.org/posts/second/</guid>
-    <description><![CDATA[hrek gzj]]></description>
-</item>
-<item>
-    <title>First_post</title>
-    <link>http://example.org/posts/first_t/</link>
-    <pubDate>Sun, 25 Jun 2023 17:29:56 &#43;0800</pubDate>
-    <author>xxxx</author>
-    <guid>http://example.org/posts/first_t/</guid>
-    <description><![CDATA[hugo建站 windows环境下载二进制文件，配置环境变量或者将hugo.exe移动到path路径下 最新的hugo和loveit主题不兼容 使]]></description>
-</item>
-</channel>
+        </channel>
 </rss>
