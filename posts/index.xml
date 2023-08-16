@@ -4,7 +4,15 @@
         <link>http://example.org/posts/</link>
         <description>All Posts | GZJ&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>hrek@qq.com (GZJ)</managingEditor>
-            <webMaster>hrek@qq.com (GZJ)</webMaster><lastBuildDate>Sat, 12 Aug 2023 21:41:33 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hrek@qq.com (GZJ)</webMaster><lastBuildDate>Wed, 16 Aug 2023 09:44:01 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Vscode_integrates_vim</title>
+    <link>http://example.org/posts/vscode_integrates_vim/</link>
+    <pubDate>Wed, 16 Aug 2023 09:44:01 &#43;0800</pubDate>
+    <author>GZJ</author>
+    <guid>http://example.org/posts/vscode_integrates_vim/</guid>
+    <description><![CDATA[vim in vscode 操作 vscode下常用快捷键 切换到vim下的解决方法 选中当前单词修改 ctrl+d+修改 向上/下复制行 shift+alt+↑/↓ 批量修改]]></description>
+</item>
+<item>
     <title>程序员的自我修养书摘</title>
     <link>http://example.org/posts/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%E4%B9%A6%E6%91%98/</link>
     <pubDate>Sat, 12 Aug 2023 21:41:33 &#43;0800</pubDate>
