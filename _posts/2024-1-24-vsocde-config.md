@@ -4,7 +4,7 @@ title:      "Vscode 个人配置"
 subtitle:   "vim in vscode"
 date:       2024-01-24 13:27:00
 author:     "GanZJ"
-header-img: "/img/post-bg-dreamer.jpg"
+header-img: "img/bg-little-universe.jpg"
 catalog: true
 tags:
   - vscode
