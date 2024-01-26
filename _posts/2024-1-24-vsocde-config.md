@@ -4,9 +4,8 @@ title:      "Vscode 个人配置"
 subtitle:   "vim in vscode"
 date:       2024-01-24 13:27:00
 author:     "GanZJ"
-header-img: "img/post-bg-dreamer.jpg"
+header-img: "/img/post-bg-dreamer.jpg"
 catalog: true
-header-style: text
 tags:
   - vscode
   - config
@@ -35,8 +34,6 @@ tags:
 `ctrl + b` : 关闭/启用侧边栏
 
 `ctrl + ↑/↓/←/→` ：设置终端大小（需在设置内配置快捷键）
-
-
 
 vscode启用：`sticky`
 
