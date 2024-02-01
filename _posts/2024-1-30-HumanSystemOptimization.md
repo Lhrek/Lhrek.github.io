@@ -13,10 +13,6 @@ tags:
 
 
 
-原文链接：[zijie0/HumanSystemOptimization: 健康学习到150岁 - 人体系统调优不完全指南 (github.com)](https://github.com/zijie0/HumanSystemOptimization)
-
-
-
 ## 睡眠
 
 ### 原理
@@ -242,3 +238,10 @@ Sinclair 也对比了一些上个世纪失败的研究，比如通过抗氧化�
 
 ......
 
+
+
+
+
+## 原文链接
+
+[zijie0/HumanSystemOptimization: 健康学习到150岁 - 人体系统调优不完全指南 (github.com)](https://github.com/zijie0/HumanSystemOptimization)
