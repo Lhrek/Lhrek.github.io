@@ -37,6 +37,12 @@ tags:
 
 vscode启用：`sticky`
 
+折叠函数
+ - `ctrl+k` `ctrl+[number]`  windows
+ - `command+k` `command+[number]` mac
+展开函数
+ - `ctrl+k` `ctrl+j` windows
+ - `command+k` `command+j` mac	
 
 
 ## vim快捷键
