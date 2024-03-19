@@ -143,7 +143,7 @@ vscode启用：`sticky`
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
-            "MIMode": "gdb",
+            "MIMode": "gdb",  //mac 使用lldb
             "preLaunchTask": "build_xxx",
             "setupCommands": [
                 {
