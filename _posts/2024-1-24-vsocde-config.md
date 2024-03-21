@@ -57,6 +57,10 @@ vscode启用：`sticky`
 
 `gh` ：查看vscode提示信息
 
+`w` ： 跳转到下一个word
+
+`b` ：（background）跳转到前一个word
+
 **vim插件配置文件**
 
 ```json
