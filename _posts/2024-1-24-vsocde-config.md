@@ -43,6 +43,7 @@ vscode启用：`sticky`
 展开函数
  - `ctrl+k` `ctrl+j` windows
  - `command+k` `command+j` mac	
+ - 将光标所在行向上移动：Alt + ↑（Windows / Linux）或**Option + ↑**（macOS）
 
 
 ## vim快捷键
