@@ -74,7 +74,7 @@ ga_track_id: "UA-49627206-1" # Format: UA-xxxxxx-xx
 
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
-sidebar-about-description: " 我与我周旋久 宁作我 <br> "
+sidebar-about-description: "你要为喜欢的事奔跑，走路真的来不及  <br> "
 sidebar-avatar: /img/avatar.jpg # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
