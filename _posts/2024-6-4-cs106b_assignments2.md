@@ -12,7 +12,7 @@ tags:
 
 ## Rosetta Stone
 
-通过三元组判断语言类型
+通过子字符串出现的频率判断语言类型，相同的语言，子字符串出现得频率会更接近，通过比较被测文本与标准文档的[余弦相似性](https://zh.wikipedia.org/wiki/余弦相似性)确定语言类型。
 
 ```cpp
 Map<string, double> kGramsIn(const string& str, int kGramLength) {
@@ -32,7 +32,9 @@ Map<string, double> kGramsIn(const string& str, int kGramLength) {
 }
 ```
 
-> 记录某个字符串出现得次数，直接使用map结构的result[tmp]++，若是第一次出现，则会初始化并计数加一。
+` Map<string, double> result;`
+
+`result[tmp]++; `
 
 
 
@@ -92,6 +94,28 @@ double cosineSimilarityOf(const Map<string, double>& lhs, const Map<string, doub
     double res = 0.0;
     for(auto i : lhs){
         res +=  lhs[i]*rhs[i];
+    }
+    return res;
+}
+```
+
+
+
+```cpp
+string guessLanguageOf(const Map<string, double>& textProfile,
+                       const Set<Corpus>& corpora) {
+    if(corpora.isEmpty() || textProfile.isEmpty())
+    {
+        error("corpora or textProfile is empty");
+            return "";
+    }
+    string res = "";
+    double max_similarity = 0.0;
+    for(auto i : corpora){
+        if(max_similarity < cosineSimilarityOf(textProfile,i.profile)){
+            res = i.name;
+            max_similarity = cosineSimilarityOf(textProfile,i.profile);
+        }
     }
     return res;
 }
