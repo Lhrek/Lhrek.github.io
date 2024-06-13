@@ -50,9 +50,53 @@ int numSquares(int n) {
 }
 ```
 
-> 超时、内存不够
+> 超时、内存不够。
+>
+> 优化方向：
+>
+> - 只向队列中添加有效的和小于等于 n 的状态
+>
+> - 记录已访问得节点，访问后不再将其加入到队列.使用更有效的数据结构来跟踪访问状态，例如布尔数组而不是集合（这可以减少哈希操作的开销）。
+>   - `std::vector<bool> visited(n + 1, false)`记录访问情况 
+>   - 反面教材:`set<int> visited;` `if (visited.find(cur.first + squares[i]) != visited.end() || (cur.first + squares[i] > n)) continue;`
+
+```cpp
+
+int numSquares(int n) {
+    std::vector<int> squares;
+    for (int i = 1; i * i <= n; i++) {
+        squares.push_back(i * i);
+    }
+
+    std::vector<bool> visited(n + 1, false); 
+    std::queue<std::pair<int, int>> q;
+    q.push({0, 0});
+
+    while (!q.empty()) {
+        auto [curSum, steps] = q.front();
+        q.pop();
+
+        for (int square : squares) {
+            int nextSum = curSum + square;
+            if (nextSum == n) return steps + 1;
+            if (nextSum > n) break;
+            if (!visited[nextSum]) {
+                visited[nextSum] = true;
+                q.push({nextSum, steps + 1});
+            }
+        }
+    }
+    return -1;
+}
+```
+
+
 
 ## 动态规划
+
+将问题转化为相似得子问题，同时记录下子问题的解。
+
+背包问题：[【动态规划/背包问题】那就从 0-1 背包问题开始讲起吧 ... (qq.com)](https://mp.weixin.qq.com/s/xmgK7SrTnFIM3Owpk-emmg)
 
 //todo
 
