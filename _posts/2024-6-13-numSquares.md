@@ -12,3 +12,5 @@ tags:
   - 每日一题
 ---
 
+[279. 完全平方数 - 力扣（LeetCode）](https://leetcode.cn/problems/perfect-squares/description/)
+
