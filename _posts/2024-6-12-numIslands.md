@@ -16,6 +16,8 @@ tags:
 
 
 
+[200. 岛屿数量 - 力扣（LeetCode）](https://leetcode.cn/problems/number-of-islands/description/)
+
 ## 个人实现
 
 将岛屿 转化成 海面 
@@ -39,9 +41,11 @@ int numIslands(vector<vector<char>>& grid) {
 }
 ```
 
-卡壳： 在`if(grid[i][j] == '1')`后将该岛屿置成海洋，即如何从`(grid[i][j]`出发便利周围。 虽然但是，离谱得是这道题我清晰得记得我当初大一刚学c写过，而且当时写得很顺，那时都没听过算法这个概念。
+卡壳： 在`if(grid[i][j] == '1')`后将该岛屿置成海洋，即如何从`(grid[i][j]`出发遍历周围。 虽然但是，离谱得是这道题我清晰得记得我当初大一刚学c写过，而且当时写得很顺，那时都没接触过算法。
 
 
+
+**以下为dfs的解法**
 
 ```cpp
 void dfs(vector<vector<char>>& grid,int i, int j){
@@ -69,7 +73,7 @@ int numIslands(vector<vector<char>>& grid) {
 }
 ```
 
-通过再实现一个函数递归调用来探索岛屿并将其重制
+通过再实现一个函数递归调用来探索岛屿并将其重置
 
 ## 其他思路
 

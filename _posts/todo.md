@@ -5,7 +5,7 @@
 - [ ] CSdiy
 
   - [ ] cs106b。22.summer  22.winter
-  - [ ] cs106l。看完视频
+  - [x] cs106l。看完视频
   - [ ] Cs50 （Introduction to AI with Python）
   - [ ] NJU 编译原理
   - [ ] cs50x （总览性质）
