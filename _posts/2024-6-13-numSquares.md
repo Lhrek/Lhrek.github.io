@@ -4,7 +4,7 @@ title:      "lc279 完全平方数"
 subtitle:   "返回和为n的完全平方数的最少数量"
 date:       2024-06-13 10:13:17
 author:     "GanZJ"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/Beijing.jpeg"
 catalog: true
 tags:
   - bfs
