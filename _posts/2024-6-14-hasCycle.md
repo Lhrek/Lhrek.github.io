@@ -15,7 +15,7 @@ tags:
 
 ```cpp
     bool hasCycle(ListNode *head) {
-                if(head == NULL) return false;
+        if(head == NULL) return false;
         auto f1 = head;
         auto f2 = head->next;
         while(f1 != NULL && f2 != NULL && f2->next != NULL){
