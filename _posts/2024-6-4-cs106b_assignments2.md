@@ -125,3 +125,34 @@ string guessLanguageOf(const Map<string, double>& textProfile,
 
 ## Rising Tides
 
+```cpp
+Grid<bool> floodedRegionsIn(const Grid<double>& terrain,
+                            const Vector<GridLocation>& sources,
+                            double height) {
+    Grid<bool> ans = Grid(terrain.numRows(),terrain.numCols(),false);
+    vector<vector<bool>> visted (terrain.numRows(),vector<bool>(terrain.numCols(),false));
+    int dir[4][2] = {{0,1},{1,0},{0,-1},{-1,0}};
+    for(auto i : sources){
+        Queue<GridLocation> q;
+        q.enqueue(i);
+        while(!q.isEmpty()){
+            GridLocation tep = q.dequeue();
+            int row = tep.row;
+            int col = tep.col;
+            visted[row][col] = true;
+            if(terrain[row][col] <= height ) ans[row][col] = true;
+            for(auto i : dir){
+                int newRow = row+i[0];
+                int newCol = col+i[1];
+                if(newRow >=0 && newRow <terrain.numRows() && newCol >=0 && newCol < terrain.numCols() && !visted[newRow][newCol] && terrain[newRow][newCol] <= height){
+                    q.enqueue(GridLocation(newRow,newCol));
+                    visted[newRow][newCol] = true;
+                }
+            }
+        }
+    }
+    return ans;
+}
+```
+
+参照（[lc279 完全平方数 - GanZJ' Blog (lhrek.github.io)](https://lhrek.github.io/2024/06/13/numSquares/)），同样是bfs。
