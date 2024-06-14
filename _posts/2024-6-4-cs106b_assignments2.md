@@ -155,4 +155,4 @@ Grid<bool> floodedRegionsIn(const Grid<double>& terrain,
 }
 ```
 
-参照（[lc279 完全平方数 - GanZJ' Blog (lhrek.github.io)](https://lhrek.github.io/2024/06/13/numSquares/)），同样是bfs。
+参照（[lc279 完全平方数 - GanZJ's Blog](https://lhrek.github.io/2024/06/13/numSquares/)），同样是bfs。
