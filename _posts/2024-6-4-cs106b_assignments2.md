@@ -121,8 +121,6 @@ string guessLanguageOf(const Map<string, double>& textProfile,
 }
 ```
 
-
-
 ## Rising Tides
 
 模拟海平面上升，分析二维表格中的海拔信息，判断在特定水面高度下被淹没的位置。
