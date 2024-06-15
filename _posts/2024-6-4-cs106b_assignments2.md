@@ -125,6 +125,6 @@ string guessLanguageOf(const Map<string, double>& textProfile,
 
 模拟海平面上升，分析二维表格中的海拔信息，判断在特定水面高度下被淹没的位置。
 
-![image-20240615195117238](/img/in-post/image-20240615195117238.png)
+![image-20240615195431407](/img/in-post/image-20240615195431407.png)
 
 参照（[lc279 完全平方数 - GanZJ's Blog](https://lhrek.github.io/2024/06/13/numSquares/)），同样是bfs。

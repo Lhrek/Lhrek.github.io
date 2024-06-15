@@ -4,7 +4,7 @@ title:      "lc141 环形链表 "
 subtitle:   "判断链表是否有环"
 date:       2024-06-14 14:21:04
 author:     "GanZJ"
-header-img: "img/post-bg-cs106b.jpg"
+header-img: "img/post-bg-cs106b.jpeg"
 catalog: true
 tags:
   - 每日一题
