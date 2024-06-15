@@ -131,7 +131,12 @@ Grid<bool> floodedRegionsIn(const Grid<double>& terrain,
                             double height) {
     Grid<bool> ans = Grid(terrain.numRows(),terrain.numCols(),false);
     vector<vector<bool>> visted (terrain.numRows(),vector<bool>(terrain.numCols(),false));
-    int dir[4][2] = {{0,1},{1,0},{0,-1},{-1,0}};
+    int dir[4][2] = {
+      {0,1},
+      {1,0},
+      {0,-1},
+      {-1,0}
+    };
     for(auto i : sources){
         Queue<GridLocation> q;
         q.enqueue(i);
