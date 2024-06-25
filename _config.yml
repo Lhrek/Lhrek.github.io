@@ -92,6 +92,7 @@ page-mathjax: false
 friends:
   [
     { title: "ruanyifeng", href: "https://www.ruanyifeng.com/blog/" },
-    { title: "Hacker News", href: "https://news.ycombinator.com/news" }
+    { title: "Hacker News", href: "https://news.ycombinator.com/news" },
+    { title: "Unsplash", href: "https://unsplash.com/" }
 
   ]
