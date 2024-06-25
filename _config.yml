@@ -91,7 +91,7 @@ page-mathjax: false
 # Frienddd
 friends:
   [
-    { title: "ruanyifeng", href: "https://www.ruanyifeng.com/blog/" }
+    { title: "ruanyifeng", href: "https://www.ruanyifeng.com/blog/" },
     { title: "Hacker News", href: "https://news.ycombinator.com/news" }
 
   ]
